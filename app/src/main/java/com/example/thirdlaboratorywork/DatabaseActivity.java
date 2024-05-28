@@ -44,7 +44,11 @@ public class DatabaseActivity extends ListActivity {
 
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getWritableDatabase();
-
+        Cursor cursorCheck = db.rawQuery("SELECT * FROM records", null);
+        if (cursorCheck.getCount() == 0) {
+            db.execSQL("INSERT INTO records (name) VALUES ('Record 1');");
+        }
+        cursorCheck.close();
         db.execSQL("CREATE TABLE IF NOT EXISTS records (_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL);");
 
         editText = findViewById(R.id.editText);
