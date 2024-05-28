@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Third Laboratory Work</string>
+    <string name="turnOff">Выключен</string>
+    <string name="turnOn">Включен</string>
+    <string name="new_item">New Item</string>
+    <string name="add">Add</string>
+</resources>
